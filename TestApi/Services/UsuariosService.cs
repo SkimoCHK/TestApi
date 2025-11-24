@@ -4,8 +4,20 @@ namespace TestApi.Services
 {
   public class UsuariosService
   {
+    private int numeroRandom;
 
-    public List<Usuario> ObtenerUsuarios()
+    public UsuariosService()
+    {
+      Random random = new Random();
+      numeroRandom = random.Next(1, 1500);
+    }
+
+    public int ObtenerNumero()
+    {
+      return numeroRandom;
+    }
+
+    public List<Usuario> ObtenerUsuarios(int idUsuario)
     {
       var listUsers = new List<Usuario>()
       {

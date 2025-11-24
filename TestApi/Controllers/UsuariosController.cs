@@ -22,6 +22,13 @@ namespace TestApi.Controllers
       return Ok(listUsarios);
     }
 
+    [HttpGet("ObtenerNumero")]
+    public IActionResult ObtenerNumero()
+    {
+      int numero = _service.ObtenerNumero();
+      return Ok(numero);
+    }
+
   }
 
 }
