@@ -10,9 +10,13 @@ namespace TestApi.Controllers
   public class UsuariosController : ControllerBase
   {
     private readonly UsuariosService _service;
-    public UsuariosController(UsuariosService service)
+
+    private readonly OtroService _troService;
+
+    public UsuariosController(UsuariosService service, OtroService troService)
     {
       _service = service;
+      _troService = troService;
     }
 
     [HttpGet("ObtenerUsuarios")]
@@ -27,6 +31,21 @@ namespace TestApi.Controllers
     {
       int numero = _service.ObtenerNumero();
       return Ok(numero);
+    }
+
+    [HttpGet("ObtenerNumeros")]
+    public IActionResult ObtenerNumeros()
+    {
+      var numInstanciaControlador = _service.ObtenerNumero();
+      var numInstanciaOtroService = _troService.ObtenerNumero();
+
+      return Ok(
+        new
+        {
+          numInstanciaControlador,
+          numInstanciaOtroService
+        }
+        );
     }
 
   }

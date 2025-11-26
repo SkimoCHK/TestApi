@@ -1,4 +1,5 @@
 
+using TestApi.Controllers;
 using TestApi.Services;
 
 namespace TestApi
@@ -11,6 +12,9 @@ namespace TestApi
 
       // Add services to the container.
       builder.Services.AddScoped<UsuariosService>();
+      builder.Services.AddScoped<OtroService>();
+
+
 
       builder.Services.AddControllers();
       // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

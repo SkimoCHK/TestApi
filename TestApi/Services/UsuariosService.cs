@@ -17,7 +17,7 @@ namespace TestApi.Services
       return numeroRandom;
     }
 
-    public List<Usuario> ObtenerUsuarios(int idUsuario)
+    public List<Usuario> ObtenerUsuarios()
     {
       var listUsers = new List<Usuario>()
       {
@@ -40,7 +40,6 @@ namespace TestApi.Services
           Edad = 23
         }
       };
-
       return listUsers;
     }
 
